@@ -28,16 +28,26 @@
 
 
 //my solution using a while loop, which is faster than a for and makes more intuitive sense.
+// function reverse(str) {
+//     let newString = '';
+//     let strLen = str.length - 1;
+//     while(strLen >= 0){
+//         const curVal = str[strLen];
+//         newString = newString + curVal;
+//         strLen--;
+//     }
+//     return newString
+// }
+
+//using longest palindrome in a string
 function reverse(str) {
     let newString = '';
     let strLen = str.length - 1;
-    debugger;
     while(strLen >= 0){
         const curVal = str[strLen];
         newString = newString + curVal;
         strLen--;
     }
-    debugger;
     return newString
 }
 reverse('meowmeow')
