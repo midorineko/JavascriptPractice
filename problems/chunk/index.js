@@ -15,7 +15,7 @@
 //     let curArr = [];
 //     for(let c of array){
 //         curArr.push(c);
-//         if(curArr.length >= size){
+//         if(curArr.length === size){
 //             finalArr.push(curArr);
 //             curArr = [];
 //         }
@@ -39,5 +39,34 @@ function chunk(array, size) {
     if(array.length > 0 ) finalArr.push(array)
     return finalArr
 }
-console.log(chunk([1, 2, 3, 4, 5, 6, 7, 8], 3))
+
+//added a sliced version, where we track starting and ending slice and push into final array by size
+// function chunk(array, size) {
+//     let finalArr = [];
+//     let sliceSize = size;
+//     let startingSize = 0;
+//     while(startingSize < array.length){
+//         let sliced = array.slice(startingSize,sliceSize);
+//         finalArr.push(sliced);
+//         sliceSize = sliceSize + size;
+//         startingSize = startingSize + size;
+//     }
+    
+//     return finalArr
+// }
+
+//chunks created at the same time
+// function chunk(array, size) {
+//     let chunk = []
+//     for(let c of array){
+//         last = chunk[chunk.length - 1]
+//         if(!last || last.length === size){
+//             chunk.push([c]);
+//         }else{
+//             last.push(c)
+//         }
+//     }
+//     return chunk
+// }
+// console.log(chunk([1, 2, 3, 4, 5, 6, 7, 8], 3))
 module.exports = chunk;
