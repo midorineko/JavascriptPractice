@@ -16,6 +16,7 @@ function maxChar(s) {
             hash[char] = 1;
         }
         if(hash[char] > finalValCount){
+            finalValCount = hash[char];
             finalVal = char;
         }
     }
