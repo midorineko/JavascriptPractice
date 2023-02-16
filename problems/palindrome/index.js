@@ -28,7 +28,6 @@
 //match the length of the original string
 function palindrome(s) {
     let final = '';
-    let good = true
     let strLen = s.length;
     for(i=0; i<strLen; i ++){
         let curVal = s[i];
