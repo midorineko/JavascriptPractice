@@ -63,25 +63,25 @@ function matrix(n) {
     let cr = 0; let cc=0;
     let val = 1
     while(val < n*n){
-        while(cr == sr && cc < ec){
+        while(cc < ec){
             a[cr][cc] = val;
             val++;
             cc++;
         }
         sr++;
-        while(cc==ec && cr < er){
+        while(cr < er){
             a[cr][cc] = val
             val++;
             cr++;
         }
         ec--;
-        while(cr==er && cc>sc){
+        while(cc>sc){
             a[cr][cc] = val;
             val++;
             cc--;
         }
         er--
-        while(cc==sc && cr>sr){
+        while(cr>sr){
             a[cr][cc] = val;
             val++;
             cr--;
@@ -91,5 +91,4 @@ function matrix(n) {
     a[cr][cc] = val
     return a
 }
-console.log(matrix(5))
 module.exports = matrix;
