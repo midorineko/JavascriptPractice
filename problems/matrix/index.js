@@ -32,7 +32,7 @@ Next we need to set this end column for each row, so we increment rows until we 
      [0, 0, 0, 6],
      [0, 0, 0, 0]] <--- again trailing 0 because we are going to set that when doing the bottom loop
 
-Now we keep the row the same and check to make sure current column is greater than starting column
+Now we  check to make sure current column is greater than starting column
     [[1, 2, 3, 4],
      [0, 0, 0, 5],
      [0, 0, 0, 6],
@@ -56,12 +56,12 @@ So before we print the matrix we have to assign the final value in the matrix.
 function matrix(n) {
     let a = []
     for(let i = 0; i < n; i++){
-        a.push(Array(n))
+        a.push([Array(n)])
     }
     let sr = 0; let sc=0;
     let er = n-1; let ec=n-1;
     let cr = 0; let cc=0;
-    let val = 1
+    let val = 1;
     while(val < n*n){
         while(cc < ec){
             a[cr][cc] = val;

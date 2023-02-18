@@ -8,6 +8,8 @@
 //     q.add(1);
 //     q.remove(); // returns 1;
 
+
+//nothing crazy about queues here, just a simple class with an array constructor and add/remove functionality.
 class Queue {
     constructor(){
         this.arr = [];
