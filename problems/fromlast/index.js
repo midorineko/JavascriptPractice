@@ -18,7 +18,7 @@ const List = linked.LinkedList;
 
 function fromLast(list, n) {
     let slow=list.getAt(0);
-    let fast=list.getAt(0+n);
+    let fast=list.getAt(n);
     while(fast.next){
         slow = slow.next;
         fast = fast.next
