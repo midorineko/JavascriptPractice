@@ -14,7 +14,8 @@
 const Linked = require('./linkedlist');
 const LinkedList = Linked.LinkedList;
 
-
+//pretty cool solution using a slow and fast counter. The fast always increments twice when slow increments once
+//this will keep slow always in the middle of fast. So we just have to iterate until fastnode finishes.
 function midpoint(l) {
     let slowNode = l.getFirst();
     let fastNode = l.getFirst();
