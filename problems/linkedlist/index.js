@@ -88,14 +88,19 @@ class LinkedList {
        if(!this.head) return null;
        let prevNode = this.getAt(ind-1);
        let pastNode = this.getAt(ind+1);
-       if(prevNode){
-        return prevNode.next = pastNode
-       }
-
-       if(pastNode){
-        return this.head = pastNode
-       }
-       return null;
+       let curNode = this.getAt(ind);
+       if(curNode){
+            if(prevNode){
+            return prevNode.next = pastNode;
+           }
+    
+           if(pastNode){
+            return this.head = pastNode;
+           }
+    
+           this.clear();
+           return null;
+       }else{return null}
     }
 
     insertAt(data, ind){
@@ -115,15 +120,36 @@ class LinkedList {
         this.insertLast(data);
         return;
     }
+
+    forEach(fn){
+        if(!this.head) return null;
+        let curNode = this.head;
+        while(curNode){
+            fn(curNode)
+            curNode = curNode.next
+        }
+    }
+    *[Symbol.iterator](){
+        let curNode = this.head;
+        while(curNode){
+            yield curNode;
+            curNode = curNode.next
+        }
+        
+    }
 }
 
 ll = new LinkedList
-ll.insertFirst('1')
-ll.insertFirst('2')
-ll.insertFirst('3')
-ll.insertFirst('4')
-ll.insertAt('n', 0)
-console.log(ll.getAt(0))
+ll.insertFirst(1)
+ll.insertFirst(2)
+ll.insertFirst(3)
+ll.insertFirst(4)
+ll.forEach((node)=>{
+    node.data = node.data + 10
+})
+
+console.log(ll)
+// console.log(ll)
 
 
 module.exports = { Node, LinkedList };
