@@ -16,6 +16,7 @@ const linked = require('./linkedlist')
 const Node = linked.Node;
 const List = linked.LinkedList;
 
+// we can use getAt(n) because we know that n will always be less than length of list
 function fromLast(list, n) {
     let slow=list.getAt(0);
     let fast=list.getAt(n);
