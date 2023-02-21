@@ -25,7 +25,7 @@ function circular(l) {
       return true;
     }
     slowNode = slowNode.next;
-    fastNode.next.next;
+    fastNode = fastNode.next.next;
   }
   return false
 }
